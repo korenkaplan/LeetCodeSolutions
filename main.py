@@ -29,5 +29,5 @@ def func():
 
 
 difficulty = difficulties.e
-file_name = 'Roman to Integer'
+file_name = 'Longest Common Prefix'
 create_file(file_name, difficulty)
