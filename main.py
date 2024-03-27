@@ -17,7 +17,8 @@ def create_file(file_name: str, difficulty: difficulties):
     with open(full_path, 'w') as file:
         file.write(f'''"""
 {difficulty.value} -> {file_name}:
-{'-' * (len(file_name) + len(difficulty.value) + 3)}
+{'-' * (len(file_name) + len(difficulty.value) + 5)}
+
 """
 from decorators import measure_time
 
@@ -28,6 +29,6 @@ def func():
 ''')
 
 
-difficulty = difficulties.e
-file_name = 'Longest Common Prefix'
+difficulty = difficulties.m
+file_name = 'Best Time to Buy and Sell Stock II'
 create_file(file_name, difficulty)
