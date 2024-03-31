@@ -1,34 +1,12 @@
-import os
-from os import path
-from enum import Enum
+from LeetCode.new_exercise import difficulties
+from new_exercise import create_exercise_and_test_file
 
 
-class difficulties(Enum):
-    e = 'Easy'
-    m = 'Medium'
-    h = 'Hard'
+def main():
+    file_name = 'Valid Palindrome'
+    difficulty = difficulties.e
+    create_exercise_and_test_file(file_name, difficulty)
 
 
-def create_file(file_name: str, difficulty: difficulties):
-    folder_path = path.abspath(difficulty.value)
-    if not path.exists(folder_path):
-        os.makedirs(folder_path)
-    full_path = os.path.join(folder_path, f'{file_name.lower().replace(" ", "_")}.py')
-    with open(full_path, 'w') as file:
-        file.write(f'''"""
-{difficulty.value} -> {file_name}:
-{'-' * (len(file_name) + len(difficulty.value) + 5)}
-
-"""
-from decorators import measure_time
-
-
-@measure_time
-def func():
-    pass
-''')
-
-
-difficulty = difficulties.m
-file_name = 'Best Time to Buy and Sell Stock II'
-create_file(file_name, difficulty)
+if __name__ == '__main__':
+    main()

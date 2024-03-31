@@ -22,12 +22,12 @@ Output: 0
 Explanation: In this case, no transactions are done and the max profit = 0.
 
 """
-from decorators import measure_time
+from LeetCode.decorators import measure_time
 
 
 @measure_time
-def func(prices):
-    if not prices:
+def func(prices) -> int:
+    if not prices or not isinstance(prices, list) or not all(isinstance(price, int) for price in prices):
         return 0
 
     min_price = prices[0]
@@ -42,7 +42,3 @@ def func(prices):
 
 
 
-
-
-prices = [2,4,1]
-print(func(prices))
